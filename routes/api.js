@@ -22,4 +22,13 @@ router.post("/new-user", (req, res, next) => {
   });
 });
 
+// Get all users:
+// GET /api/exercise/users
+router.get("/users", (req, res, next) => {
+  User.find({}, (err, data) => {
+    if (err) return next(err);
+    res.json(data);
+  });
+});
+
 module.exports = router;

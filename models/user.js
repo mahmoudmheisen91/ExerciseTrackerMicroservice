@@ -8,7 +8,7 @@ let UserSchema = new Schema({
     required: true,
     unique: true
   },
-  id: {
+  _id: {
     type: String,
     default: shortID.generate
   }
