@@ -1,0 +1,160 @@
+/* Setup */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.4em;
+  margin-top: 40px;
+}
+
+header {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin: 0 80px;
+  font-size: larger;
+  font-weight: 400;
+}
+
+header > strong {
+  font-weight: 900;
+}
+
+.center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Start User Form Styling */
+.user-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: auto;
+}
+
+.user-container > label {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  font-weight: bold;
+}
+
+.user-container > #username {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  padding: 10px 12px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.user-container > #submit-user {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-container > #submit-user:hover {
+  background-color: #45a049;
+}
+/* End User Form Styling */
+
+/* Start Exercise Form Styling */
+.exercise-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: auto;
+}
+
+.exercise-container > label {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  font-weight: bold;
+}
+
+.exercise-container > #userID {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  padding: 10px 12px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.exercise-container > #description {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  padding: 10px 12px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.exercise-container > #duration {
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+  padding: 10px 12px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.exercise-container > #date {
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
+  padding: 10px 12px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.exercise-container > #submit-exercise {
+  grid-column: 2 / span 1;
+  grid-row: 6 / span 1;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.exercise-container > #submit-exercise:hover {
+  background-color: #45a049;
+}
+/* End Exercise Form Styling */
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+code {
+  font-family: monospace;
+  padding: 2px;
+  font-weight: 400;
+}
+
+a:visited {
+  color: black;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "exercise-tracker-microservice",
+  "version": "0.1.0",
+  "description": "Exercise Tracker Microservice Project for FCC Course 5",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.5",
+    "shortid": "^2.2.6"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahmoudmheisen91/ExerciseTrackerMicroservice"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express",
+    "mondoDB",
+    "freecodecamp"
+  ],
+  "author": "Mahmoud Mheisen",
+  "license": "MIT"
+}
