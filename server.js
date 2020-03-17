@@ -6,9 +6,9 @@ const cors = require("cors");
 // MongoDB:
 const mongoose = require("mongoose");
 process.env.MONGO_URI =
-  "mongodb+srv://dbMahmoud:asdf3456@cluster0-rezfj.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://dbMahmoud:asdf3456@cluster0-bhjwz.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect(process.env.MLAB_URI || "mongodb://localhost/exercise-track", {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -23,6 +23,10 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
+
+// API Router:
+const apiRouter = require("./routes/api");
+app.use("/api/exercise", apiRouter);
 
 // Not found middleware:
 app.use((req, res, next) => {
