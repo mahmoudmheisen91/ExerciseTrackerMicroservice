@@ -23,7 +23,7 @@ router.post("/new-user", (req, res, next) => {
   });
 });
 
-// Get all users:
+// Get all users endpoint...
 // GET /api/exercise/users
 router.get("/users", (req, res, next) => {
   User.find({}, (err, data) => {
@@ -63,9 +63,17 @@ router.post("/add", (req, res, next) => {
       output.duration = exerciseData.duration;
       output.date = new Date(exerciseData.date).toDateString();
 
-      exerciseData = output;
-      res.json(exerciseData);
+      res.json(output);
     });
+  });
+});
+
+// GET all exercise log endpoint...
+// GET /api/exercise/log
+router.get("/log", (req, res, next) => {
+  Exercise.find({}, (err, data) => {
+    if (err) return next(err);
+    res.json(data);
   });
 });
 
