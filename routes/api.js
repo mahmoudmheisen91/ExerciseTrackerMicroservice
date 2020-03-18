@@ -77,4 +77,49 @@ router.get("/logs", (req, res, next) => {
   });
 });
 
+// GET users's exercise log endpoint...
+// GET /api/exercise/log?{userID}[&from][&to][&limit]
+router.get("/log", (req, res, next) => {
+  let userID = req.query.userID;
+  let from = new Date(req.query.from);
+  let to = new Date(req.query.to);
+  let limit = req.query.limit;
+
+  User.findById(userID, (err, user) => {
+    if (err) return next(err);
+
+    // Validate userID:
+    if (!user) {
+      let err = new Error("unknown userId...");
+      err.status = 400;
+      return next(err);
+    }
+
+    Exercise.find({
+      userID: userID,
+      date: {
+        $gt: from != "Invalid Date" ? from.getTime() : 0,
+        $lt: to != "Invalid Date" ? to.getTime() : new Date()
+      }
+    })
+      .limit(limit)
+      .exec((err, data) => {
+        if (err) return next(err);
+        let output = {
+          _id: userID,
+          username: user.username,
+          from: from != "Invalid Date" ? from.toDateString() : undefined,
+          to: to != "Invalid Date" ? to.toDateString() : undefined,
+          count: data.length,
+          log: data.map(e => ({
+            description: e.description,
+            duration: e.duration,
+            date: e.date.toDateString()
+          }))
+        };
+        res.json(output);
+      });
+  });
+});
+
 module.exports = router;
