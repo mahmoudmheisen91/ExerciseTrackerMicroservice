@@ -69,8 +69,8 @@ router.post("/add", (req, res, next) => {
 });
 
 // GET all exercise log endpoint...
-// GET /api/exercise/log
-router.get("/log", (req, res, next) => {
+// GET /api/exercise/logs
+router.get("/logs", (req, res, next) => {
   Exercise.find({}, (err, data) => {
     if (err) return next(err);
     res.json(data);
